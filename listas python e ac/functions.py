@@ -146,21 +146,24 @@ def Estatisticas():
         print(f"E a pior média foi: {min(Media)}")
 
         mediaDeTodos = sum(Gols) / sum(Partidas)
-        print(f"A média geral contando todo mundo foi: {mediaDeTodos}")
+        print(f"A média geral contando todo mundo foi: {mediaDeTodos:.2f}")
 
         pos = max(Media)
         melhor = Media.index(pos)
+        melhor = Nomes[melhor]
 
         print(f"A melhor média e portanto desempenho foi do {melhor}")
 
-        print("Outros jogadores notavei foram:")
+        print("Outros jogadores notaveis foram:")
+
         for i in range(len(Nomes)):
             if Media[i] >= 0.87:
-                print(f"{Nomes[i]}: {Media[i]}")
+                print(f"{Nomes[i]}: {Media[i]:.2f}")
 
         print("E outros que não são tão notaveis assim...:")
+
         for i in range(len(Nomes)):
             if Media[i] <= 0.30:
-                print(f"{Nomes[i]}: {Media[i]}")
+                print(f"{Nomes[i]}: {Media[i]:.2f}")
         
         print("E apenas isso obrigado")
