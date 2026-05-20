@@ -65,7 +65,6 @@ def PesquisaJogador():
         else:
             print("Não foi encontrado")
 
-
 def AlterarInfo():
     if len(Nomes) == 0:
         print("Nenhum jogador para alterar")
@@ -102,6 +101,13 @@ def AlterarInfo():
                     Novos_jogos = int(input("Qual sera a nova quantidade de partidas?: "))
                     Partidas[pos] = Novos_jogos
 
+                    QuantGols = 0
+                    QuantGols = Gols[pos]
+
+                    Novamedia = QuantGols / Novos_jogos
+
+                    Media[pos] = Novamedia
+
                     print(f"Quantidade substituida para {Partidas[pos]}")
 
                 elif Selection == 3:
@@ -110,11 +116,19 @@ def AlterarInfo():
                     Novos_gols = int(input("Qual sera a nova quantidade de gols?: "))
                     Gols[pos] = Novos_gols
 
+                    QuantPart = 0
+                    QuantPart = Partidas[pos]
+
+                    Novamedia = Novos_gols / QuantPart
+
+                    Media[pos] = Novamedia
+
                     print(f"Quantidade substituida para {Gols[pos]}")
 
                 else:
                     print("Terminando... ")
-
+        else:
+            print("Erro 404: Não encontrado")
 
 def Remover():
     if len(Nomes) == 0:
@@ -128,6 +142,10 @@ def Remover():
 
             if Certeza == 1:
                 Nomes.remove(Removido)
+                Partidas.remove(Removido)
+                Gols.remove(Removido)
+                Media.remove(Removido)
+
                 print("Jogador removido")
 
             else:
@@ -160,7 +178,7 @@ def Estatisticas():
             if Media[i] >= 0.87:
                 print(f"{Nomes[i]}: {Media[i]:.2f}")
 
-        print("E outros que não são tão notaveis assim...:")
+        print("E outros que não são tão notaveis assim... (Se tiver ninguem UaU todos são uteis o suficiente):")
 
         for i in range(len(Nomes)):
             if Media[i] <= 0.30:
