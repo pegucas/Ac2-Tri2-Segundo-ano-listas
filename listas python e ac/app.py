@@ -40,7 +40,5 @@ while EscolhaMenu != 8:
         print("-" * 45)
         print("Encerrando programa...")
         break
-    elif EscolhaMenu == 0:
-        print("Teste de racismo \nEm um galinheiro existem 30 galinhas. Um crioulo levou 10 galinhas. Quantas galinhas ficaram no galinheiro ? \nRESULTADO ABAIXO: \nSe você respondeu 20 galinhas - Você é racista. \nSe você respondeu 40 galinhas - Parabéns !! \nSe tinham 30 e ele levou mais 10, ficaram 40 galinhas. Ninguém falou que ele roubou 10.")
     else:
         print("É tão dificil assim escolher de 1 a 8?")
